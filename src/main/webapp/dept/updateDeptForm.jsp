@@ -44,17 +44,17 @@
 					<tr>
 						<th>부서 번호</th>
 						<td>
-							<input type="text" name="deptNo" value="<%=deptNo%>" readonly="readonly">
+							<input type="text" name="deptNo" value="<%=deptNo%>" readonly="readonly" class="form-control">
 						</td>
 					</tr>
 					<tr>
 						<th>부서 이름</th>
 						<td>
-							<input type="text" name="deptName" value="<%=deptName%>">
+							<input type="text" name="deptName" value="<%=deptName%>" class="form-control">
 						</td>
 					</tr>
 				</table>
-				<div>
+				<div style="text-align:center">
 					<button type="submit">수정</button>
 				</div>
 			</form>
