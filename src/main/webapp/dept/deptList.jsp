@@ -14,12 +14,13 @@
 	PreparedStatement stmt = conn.prepareStatement(sql);
 	ResultSet rs = stmt.executeQuery(); // <- 모델데이터로서 ResultSet은 일반적인고 독립적인 타입이 아니라 특수한 곳에서만 쓸 수 있는 자료구조
 	// ResultSet rs라는 모델자료구조를 좀 더 일반적이고 독립적인 자료구조로 변경을 하자
-	ArrayList<Department> list = new ArrayList<Department>();
+	
+	ArrayList<Department> dept = new ArrayList<Department>();
 	while(rs.next()) { // ResultSet의 API(사용방법)를 모른다면 사용할 수 없는 반복문
 		Department d = new Department();
 		d.deptNo = rs.getString("deptNo");
 		d.deptName = rs.getString("deptName");
-		list.add(d);
+		dept.add(d);
 	}
 	// 3. 출력(View) -> 모델데이터를 고객이 원하는 형태로 출력 -> 뷰(리포트)
 
@@ -50,13 +51,13 @@
 				</thead>
 				<tbody>
 					<%
-						for(Department d : list) { // 자바 문법에서 제공하는 foreach문
+						for(Department d : dept) { // 자바 문법에서 제공하는 foreach문
 					%>
 					<tr>
 						<td><%=d.deptNo%></td>
 						<td><%=d.deptName%></td>
-						<td><a href="<%=request.getContextPath()%>/updateDeptForm.jsp?dept_no=<%=d.deptNo%>">수정</a>
-						<td><a href="<%=request.getContextPath()%>/deleteDept.jsp?dept_no=<%=d.deptName%>">삭제</a>
+						<td><a href="<%=request.getContextPath()%>/dept/updateDeptForm.jsp?deptNo=<%=d.deptNo%>">수정</a>
+						<td><a href="<%=request.getContextPath()%>/dept/deleteDept.jsp?deptNo=<%=d.deptNo%>">삭제</a>
 					</tr>
 					<%		
 						}

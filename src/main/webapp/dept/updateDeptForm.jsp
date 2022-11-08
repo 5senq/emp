@@ -1,16 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
+<%@ page import="java.util.*"%>
+<%@ page import="vo.*"%>
 <%
 	request.setCharacterEncoding("utf-8");
 
-	String deptNo = request.getParameter("dept_no");
+	String deptNo = request.getParameter("deptNo");
 	
 	Class.forName("org.mariadb.jdbc.Driver");
 	System.out.println("드라이버 로딩 성공");
 	
 	Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/employees","root","java1234");
 	
-	PreparedStatement stmt = conn.prepareStatement("SELECT dept_name FROM departments WHERE dept_no=?");
+	String sql = "SELECT dept_no, dept_name FROM departments WHERE dept_no=?";
+	
+	PreparedStatement stmt = conn.prepareStatement(sql);
 	
 	stmt.setString(1, deptNo);
 	
@@ -34,7 +38,7 @@
 	</head>
 	<body>
 		<div class="container">
-			<form action="<%=request.getContextPath()%>/updateDeptAction.jsp" method="post">
+			<form action="<%=request.getContextPath()%>/dept/updateDeptAction.jsp" method="post">
 				<h1 style="text-align:center">부서 수정</h1>
 				<table class="table table-bordered">
 					<tr>
@@ -51,7 +55,7 @@
 					</tr>
 				</table>
 				<div>
-					<button type="submit">입력</button>
+					<button type="submit">수정</button>
 				</div>
 			</form>
 		</div>

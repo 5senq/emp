@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<div class="container">
-			<form action="<%=request.getContextPath()%>/insertDeptAction.jsp" method="post">
+			<form action="<%=request.getContextPath()%>/dept/insertDeptAction.jsp" method="post">
 				<h1 style="text-align:center">부서 추가</h1>
 				<table class="table table-bordered">
 					<tr>

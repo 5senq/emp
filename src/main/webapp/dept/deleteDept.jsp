@@ -1,12 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
+<%@ page import="java.util.*"%>
+<%@ page import="vo.*"%>
 <%
 	// 한글 처리
 	request.setCharacterEncoding("utf-8");
 
 	// 요청 분석
-	String deptNo = request.getParameter("dept_no");
-	System.out.println("dept_no : " + deptNo);
+	String deptNo = request.getParameter("deptNo");
+	System.out.println("deptNo : " + deptNo);
 
 	// 요청 처리
 	// 연결
@@ -29,5 +31,5 @@
 		System.out.println("삭제실패");
 	}
 	
-	response.sendRedirect(request.getContextPath()+"deptList.jsp");
+	response.sendRedirect(request.getContextPath()+"/dept/deptList.jsp");
 %>
