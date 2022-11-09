@@ -6,6 +6,11 @@
 	request.setCharacterEncoding("utf-8");
 
 	String deptNo = request.getParameter("deptNo");
+	// deptList의 링크로 호출하지 않고 updateDeptForm.jsp 주소창에 직접 호출하면 deptNo는 null 값이 된다.
+	if(deptNo == null) {
+		response.sendRedirect(request.getContextPath()+"/dept/deptList.jsp");
+		return;
+	}
 	
 	Class.forName("org.mariadb.jdbc.Driver");
 	System.out.println("드라이버 로딩 성공");
@@ -40,6 +45,9 @@
 		<div class="container">
 			<form action="<%=request.getContextPath()%>/dept/updateDeptAction.jsp" method="post">
 				<h1 class="bg-dark text-white" style="text-align:center">DEPT EDIT</h1>
+				<div class="container" style="text-align:right">
+					<jsp:include page="/inc/menuBack.jsp"></jsp:include>
+				</div>
 				<table class="table table-bordered">
 					<tr>
 						<th>부서 번호</th>

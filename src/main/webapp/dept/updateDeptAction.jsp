@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*"%>
-<%@ page import="java.util.*"%>
-<%@ page import="vo.*"%>
+<%@ page import = "java.sql.*" %>
+<%@ page import="vo.Department"%>
 <%
 	// 한글 처리
 	request.setCharacterEncoding("utf-8");

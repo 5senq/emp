@@ -37,7 +37,6 @@
 	</head>
 	<body>
 		<h1 style="text-align:center">DEPT LIST</h1>
-		
 		<div class="container">
 			<!-- 부서목록출력(부서번호 내림차순으로) -->
 			<table class="table table-bordered">
@@ -66,6 +65,7 @@
 			</table>
 		</div>
 		<div style="text-align:center">
+			<a class="btn btn-outline-dark" href="<%=request.getContextPath()%>/index.jsp">HOME</a>
 			<a class="btn btn-dark" href="<%=request.getContextPath()%>/dept/insertDeptForm.jsp">부서 추가</a>
 		</div>
 	</body>

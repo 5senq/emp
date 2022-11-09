@@ -13,6 +13,9 @@
 		<div class="container">
 			<form action="<%=request.getContextPath()%>/dept/insertDeptAction.jsp" method="post">
 				<h1 class="bg-dark text-white" style="text-align:center">DEPT ADD</h1>
+		<div class="container" style="text-align:right">
+			<jsp:include page="/inc/menuBack.jsp"></jsp:include>
+		</div>		
 				<table class="table table-bordered">
 					<tr>
 						<th>부서 번호</th>
