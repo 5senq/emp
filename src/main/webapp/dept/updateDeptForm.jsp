@@ -39,7 +39,7 @@
 	<body>
 		<div class="container">
 			<form action="<%=request.getContextPath()%>/dept/updateDeptAction.jsp" method="post">
-				<h1 style="text-align:center">부서 수정</h1>
+				<h1 class="bg-dark text-white" style="text-align:center">DEPT EDIT</h1>
 				<table class="table table-bordered">
 					<tr>
 						<th>부서 번호</th>
@@ -55,7 +55,7 @@
 					</tr>
 				</table>
 				<div style="text-align:center">
-					<button type="submit">수정</button>
+					<button type="submit" class="btn btn-dark">수정</button>
 				</div>
 			</form>
 		</div>

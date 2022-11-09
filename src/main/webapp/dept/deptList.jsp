@@ -45,8 +45,8 @@
 					<tr>
 						<th class="table-dark">부서 번호</th>
 						<th class="table-dark">부서 이름</th>
-						<th class="table-dark">수정</th>
-						<th class="table-dark">삭제</th>
+						<th class="table-dark" style="text-align:center">수정</th>
+						<th class="table-dark" style="text-align:center">삭제</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -56,8 +56,8 @@
 					<tr>
 						<td><%=d.deptNo%></td>
 						<td><%=d.deptName%></td>
-						<td><a href="<%=request.getContextPath()%>/dept/updateDeptForm.jsp?deptNo=<%=d.deptNo%>" class="text-decoration-none">수정</a>
-						<td><a href="<%=request.getContextPath()%>/dept/deleteDept.jsp?deptNo=<%=d.deptNo%>" class="text-decoration-none">삭제</a>
+						<td style="text-align:center"><a href="<%=request.getContextPath()%>/dept/updateDeptForm.jsp?deptNo=<%=d.deptNo%>" class="text-decoration-none">수정</a>
+						<td style="text-align:center"><a href="<%=request.getContextPath()%>/dept/deleteDept.jsp?deptNo=<%=d.deptNo%>" class="text-decoration-none text-danger">삭제</a>
 					</tr>
 					<%		
 						}
@@ -66,7 +66,7 @@
 			</table>
 		</div>
 		<div style="text-align:center">
-			<a href="<%=request.getContextPath()%>/dept/insertDeptForm.jsp">부서 추가</a>
+			<a class="btn btn-dark" href="<%=request.getContextPath()%>/dept/insertDeptForm.jsp">부서 추가</a>
 		</div>
 	</body>
 </html>

@@ -12,7 +12,7 @@
 	<body>
 		<div class="container">
 			<form action="<%=request.getContextPath()%>/dept/insertDeptAction.jsp" method="post">
-				<h1 style="text-align:center">부서 추가</h1>
+				<h1 class="bg-dark text-white" style="text-align:center">DEPT ADD</h1>
 				<table class="table table-bordered">
 					<tr>
 						<th>부서 번호</th>
@@ -24,7 +24,7 @@
 					</tr>
 				</table>
 				<div style="text-align:center">
-					<button type="submit">입력</button>
+					<button type="submit" class="btn btn-dark">입력</button>
 				</div>
 			</form>
 		</div>
