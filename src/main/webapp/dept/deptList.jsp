@@ -42,10 +42,10 @@
 			<table class="table table-bordered">
 				<thead>
 					<tr>
-						<th class="table-dark">부서 번호</th>
-						<th class="table-dark">부서 이름</th>
-						<th class="table-dark" style="text-align:center">수정</th>
-						<th class="table-dark" style="text-align:center">삭제</th>
+						<th class="bg-dark text-white">부서 번호</th>
+						<th class="bg-dark text-white">부서 이름</th>
+						<th class="bg-dark text-white" style="text-align:center">수정</th>
+						<th class="bg-dark text-white" style="text-align:center">삭제</th>
 					</tr>
 				</thead>
 				<tbody>
