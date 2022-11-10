@@ -14,8 +14,11 @@
 		<div>
 		<h1 style="text-align:center">INDEX</h1>
 		</div>
+		<br>
 		<div>
 			<a class="btn btn-dark" href="<%=request.getContextPath()%>/dept/deptList.jsp">부서 관리</a>
+			<a class="btn btn-dark" href="<%=request.getContextPath()%>/emp/empList.jsp">사원 관리</a>
+			<a class="btn btn-dark" href="<%=request.getContextPath()%>/board/boardList.jsp">게시판 관리</a>
 		</div>
 	</body>
 </html>

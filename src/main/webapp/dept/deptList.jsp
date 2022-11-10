@@ -33,19 +33,30 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
 		<!-- Latest compiled JavaScript -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+		<style>
+			th, td {
+				text-align: center;
+			}
+			h1 {
+				color: #006F00;
+			}
+		</style>
 		<title>Departments</title>
 	</head>
 	<body>
-		<h1 style="text-align:center">DEPT LIST</h1>
+		<h1 style="text-align:center">부서목록</h1>
+		<div class="container" style="text-align:right">
+			<jsp:include page="/inc/menu.jsp"></jsp:include>
+		</div>
 		<div class="container">
 			<!-- 부서목록출력(부서번호 내림차순으로) -->
 			<table class="table table-bordered">
 				<thead>
 					<tr>
-						<th class="bg-dark text-white">부서 번호</th>
-						<th class="bg-dark text-white">부서 이름</th>
-						<th class="bg-dark text-white" style="text-align:center">수정</th>
-						<th class="bg-dark text-white" style="text-align:center">삭제</th>
+						<th class="bg-success text-white" style="width:200px;">부서번호</th>
+						<th class="bg-success text-white" style="width:880px;">부서이름</th>
+						<th class="bg-success text-white">수정</th>
+						<th class="bg-success text-white">삭제</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -55,8 +66,8 @@
 					<tr>
 						<td><%=d.deptNo%></td>
 						<td><%=d.deptName%></td>
-						<td style="text-align:center"><a href="<%=request.getContextPath()%>/dept/updateDeptForm.jsp?deptNo=<%=d.deptNo%>" class="text-decoration-none">수정</a>
-						<td style="text-align:center"><a href="<%=request.getContextPath()%>/dept/deleteDept.jsp?deptNo=<%=d.deptNo%>" class="text-decoration-none text-danger">삭제</a>
+						<td><a href="<%=request.getContextPath()%>/dept/updateDeptForm.jsp?deptNo=<%=d.deptNo%>" class="text-decoration-none text-success" style="width:200px;">수정</a>
+						<td><a href="<%=request.getContextPath()%>/dept/deleteDept.jsp?deptNo=<%=d.deptNo%>" class="text-decoration-none text-danger" style="width:880px;">삭제</a>
 					</tr>
 					<%		
 						}
@@ -65,8 +76,7 @@
 			</table>
 		</div>
 		<div style="text-align:center">
-			<a class="btn btn-outline-dark" href="<%=request.getContextPath()%>/index.jsp">HOME</a>
-			<a class="btn btn-dark" href="<%=request.getContextPath()%>/dept/insertDeptForm.jsp">부서 추가</a>
+			<a class="btn btn-success" href="<%=request.getContextPath()%>/dept/insertDeptForm.jsp">부서 추가</a>
 		</div>
 	</body>
 </html>
