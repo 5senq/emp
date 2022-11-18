@@ -88,6 +88,17 @@
 		<div class="container" style="text-align:right">
 			<jsp:include page="/inc/menu.jsp"></jsp:include>
 		</div>
+		
+		
+		<!-- 검색창 -->
+		<!-- 즐겨찾기 등에 쓸 주소를 저장하려고 get 방식을 사용해야할 때가 잇음 / <a>는 무조건 get 방식 -->
+		<form action="<%=request.getContextPath()%>/board/boardList.jsp" method="post">
+			<label for="searchContent">
+				<input type="text" name="searchContent" placeholder="내용 검색">
+			</label>
+			<button type="submit" class="btn btn-sm btn-outline-dark">검색</button>
+		</form>
+		
 		<!-- 3-1.모델데이터(ArrayList<Board>) 출력 -->
 		<div class="container">
 			<table class="table table-bordered">
@@ -117,25 +128,32 @@
 		<div class="container" style="text-align:right">
 			<a href="<%=request.getContextPath()%>/board/insertBoardForm.jsp" class="text-decoration-none">&#9999;</a>
 		</div>
+		
 		<!-- 3-2. 페이징 -->
 		<div style="text-align:center">
-			<a class="btn btn-sm btn-dark" href="<%=request.getContextPath()%>/board/boardList.jsp?currentPage=1">처음</a>
-			<%
-		    	if(currentPage > 1) {            
-		    %>
-		    		<a class="btn btn-sm btn-outline-dark" href="<%=request.getContextPath()%>/board/boardList.jsp?currentPage=<%=currentPage-1%>">이전</a>
-		    <%
-		    	}
-		      
-		    	if(currentPage < lastPage) {
-		    %>
-		    		<span><%=currentPage%></span>      
-		    		<a class="btn btn-sm btn-outline-dark" href="<%=request.getContextPath()%>/board/boardList.jsp?currentPage=<%=currentPage+1%>">다음</a>   
-		    <%   
-		    	}
-		    %>
-		    <a class="btn btn-sm btn-dark" href="<%=request.getContextPath()%>/board/boardList.jsp?currentPage=<%=lastPage%>">마지막</a>
-			
+			<% 
+				if(searchContent == null) {
+			%>
+					<a class="btn btn-sm btn-dark" href="<%=request.getContextPath()%>/board/boardList.jsp?currentPage=1">처음</a>
+					<%
+						if(currentPage > 1) {
+					%>
+							<a class="btn btn-sm btn-outline-dark" href="<%=request.getContextPath()%>/board/boardList.jsp?currentPage=<%=currentPage-1%>">이전</a>
+					<%		
+						}
+					
+						if(currentPage < lastPage) {
+					%>
+							<span><%=currentPage%></span>      
+							<a class="btn btn-sm btn-outline-dark" href="<%=request.getContextPath()%>/board/boardList.jsp?currentPage=<%=currentPage+1%>">다음</a>			
+					<%
+						}
+					%>					
+							<a class="btn btn-sm btn-dark" href="<%=request.getContextPath()%>/board/boardList.jsp?currentPage=<%=lastPage%>">마지막</a>		    		
+		    
+					<%   
+						}
+					%>   
 		</div>
 	</body>
 </html>
